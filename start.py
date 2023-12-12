@@ -13,9 +13,7 @@ class FSMFillForm(StatesGroup):
 
 @dispatcher.message(Command('start'))
 async def process_start_command(message: Message):
-    await message.answer(text='Привет! Екатеринбург — волшебный город, где каждая улица рассказывает десятки историй '
-                              'через стрит-арт. ' 'Порой кажется, что город говорит только с тобой. Просто задай '
-                              'свой вопрос, и бот поможет тебе раскрыть ' 'путь к ответу через фотографии.',
+    await message.answer(text='Хочешь написать свой вопрос в чат или просто его задумать?',
                          reply_markup=start_kb)
 
 
@@ -43,4 +41,4 @@ async def process_fill_question(message, state):
 
 
 if __name__ == '__main__':
-    dispatcher.run_polling(bot)
+    dispatcher.run_polling(bot, skip_updates=False)

@@ -2,8 +2,8 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 keyboard = InlineKeyboardMarkup(
     inline_keyboard=[
-        [InlineKeyboardButton(text='Хочу задать вопрос в чятик', callback_data='get_photo_with_question')],
-        [InlineKeyboardButton(text='Лучше просто задумаю его', callback_data='get_photo_now')]]
+        [InlineKeyboardButton(text='Хочу написать вопрос', callback_data='get_photo_with_question')],
+        [InlineKeyboardButton(text='Лучше оставлю только в голове', callback_data='get_photo_now')]]
 )
 
 start_kb = keyboard

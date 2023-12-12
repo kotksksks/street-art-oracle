@@ -21,7 +21,7 @@ threading.Thread(target=clear_list).start()
 
 def write_in_file(message):
     user_id = message.from_user.id
-    text = send_photo(message)
+    text = message.text
     df = pd.DataFrame({'User ID': [user_id], 'Message': [text]})
     with pd.ExcelWriter('chats.xlsx', engine='openpyxl', mode='a', if_sheet_exists='overlay') as writer:
         df.to_excel(writer, index=False, header=False, startrow=writer.sheets['Sheet1'].max_row)
