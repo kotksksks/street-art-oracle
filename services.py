@@ -1,23 +1,8 @@
 import os
-import time
 import random
-import schedule
-import threading
 import pandas as pd
 
 sent_images = {}
-
-
-def clear_list():
-    sent_images.clear()
-    schedule.every().day.at('02:00').do(clear_list)
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
-
-
-threading.Thread(target=clear_list).start()
-
 
 def write_in_file(message):
     user_id = message.from_user.id
